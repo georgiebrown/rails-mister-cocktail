@@ -5,7 +5,7 @@
     <div class="cocktail_card_image" style="background-image: url('https://images.unsplash.com/photo-1536935338788-846bb9981813?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')" alt="Card image cap"></div>
     <div class="card-body">
       <h2><%= link_to cocktail.name, cocktail_path(cocktail)%></h2>
-      <%= link_to "<i class='fas fa-trash-alt'></i>", cocktail_path(cocktail), method: :delete  %>
+      <%= link_to "<i class='fas fa-trash-alt'></i>".html_safe, cocktail_path(cocktail), method: :delete  %>
     </div>
   </div>
    <% end %>
