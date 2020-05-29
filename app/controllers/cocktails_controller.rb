@@ -1,17 +1,17 @@
 class CocktailsController < ApplicationController
   before_action :set_cocktail, only: [:show, :destroy]
+
   def index
     @cocktails = Cocktail.all
-    @search = params["search"]
-    if @search.present?
-      @name = @search["name"]
-      @cocktails = Cocktail.where(name: @name)
-    end
+    # @search = params["search"]
+    # if @search.present?
+    #   @name = @search["name"]
+    #   @cocktails = Cocktail.where(name: @name)
+    # end
   end
 
   def show
     @doses = Dose.all
-
   end
 
   def new
@@ -22,9 +22,9 @@ class CocktailsController < ApplicationController
     @cocktail = Cocktail.new(cocktail_params)
       if @cocktail.save
        redirect_to cocktail_path(@cocktail)
-    else
+      else
       render 'new'
-    end
+      end
   end
 
   def destroy
@@ -34,7 +34,7 @@ class CocktailsController < ApplicationController
 
 private
   def set_cocktail
-     @cocktail = Cocktail.find(params[:id])
+    @cocktail = Cocktail.find(params[:id])
   end
 
   def cocktail_params
