@@ -2,10 +2,16 @@ class CocktailsController < ApplicationController
   before_action :set_cocktail, only: [:show, :destroy]
   def index
     @cocktails = Cocktail.all
+    @search = params["search"]
+    if @search.present?
+      @name = @search["name"]
+      @cocktails = Cocktail.where(name: @name)
+    end
   end
 
   def show
-    @doses = Dose.new
+    @doses = Dose.all
+
   end
 
   def new
@@ -26,16 +32,12 @@ class CocktailsController < ApplicationController
     redirect_to cocktails_path
   end
 
-  def search
-    @flats = Flat.where(name: 5)
-  end
-
 private
   def set_cocktail
      @cocktail = Cocktail.find(params[:id])
   end
 
   def cocktail_params
-    params.require(:cocktail).permit(:name)
+    params.require(:cocktail).permit(:name, :photo)
   end
 end

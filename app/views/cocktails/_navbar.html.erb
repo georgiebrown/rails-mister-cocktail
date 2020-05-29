@@ -1,0 +1,10 @@
+<nav class="navbar navbar-light bg-light justify-content-between">
+  <%= link_to "COCKTAILS", cocktails_path,  { :class=>"navbar-brand" }   %>
+
+<%= simple_form_for :search, url: cocktails_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+  <%= f.input :name, input_html: {value: ""} %>
+  <%= f.submit "Search", class: "btn btn-primary" %>
+  <button type="button" class="btn btn-outline-primary"><%= link_to "Add Cocktail", new_cocktail_path  %></button>
+<% end %>
+
+</nav>

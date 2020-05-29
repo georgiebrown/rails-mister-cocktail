@@ -8,7 +8,12 @@
 Ingredient.create(name: "lemon")
 Ingredient.create(name: "ice")
 Ingredient.create(name: "mint leaves")
+Ingredient.create(name: "gin")
 
-Cocktail.create(name: "negroni")
-Cocktail.create(name: "aperol spritz")
-Cocktail.create(name: "magratia")
+Ingredient.create(name: "vermouth")
+Ingredient.create(name: "vodka")
+Ingredient.create(name: "aperol")
+Ingredient.create(name: "proseco")
+Ingredient.create(name: "tonic")
+
+

@@ -1,0 +1,8 @@
+.btn {
+  transition: 2sec;
+
+  .btn:hover{
+    text: $black;
+    background: white;
+  }
+}
